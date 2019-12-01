@@ -1,0 +1,39 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run automate",
+            "type": "python",
+            "request": "launch",
+            "module": "automate",
+            "console": "integratedTerminal",
+            "args": [
+                "--skip-install",
+                "--skip-extract-wiki",
+                // "--skip-vanilla",
+                // "--remove-cache",
+            ]
+        },
+        {
+            "name": "Run uegrep",
+            "type": "python",
+            "request": "launch",
+            "module": "uegrep",
+            "console": "integratedTerminal",
+            "args": [
+                "Dodo_Character",
+            ]
+        },
+        {
+            "name": "Launch current file",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+        },
+    ]
+}

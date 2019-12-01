@@ -1,0 +1,29 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+isort = {extras = ["pipfile"],version = "~=4.3.21"}
+rope = "~=0.14"
+pytest = "~=5.0.1"
+pytest-cov = "*"
+pytest-mock = "*"
+pylint = "~=2.4.3"
+mypy = "!=0.740"
+jupyter = "~=1.0"
+yapf = "~=0.29.0"
+
+[packages]
+pyyaml = "~=5.1.1"
+sympy = "~=1.4"
+mpmath = "~=1.1.0"
+
+[requires]
+python_version = "3.7"
+
+[pipenv]
+allow_prereleases = false
+
+[scripts]
+tests = "pytest --cov=."

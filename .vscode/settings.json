@@ -1,0 +1,40 @@
+{
+    "files.exclude": {
+        "**/.venv": true,
+        "**/__pycache__": true,
+        "**/.pytest_cache": true,
+        "**/.mypy_cache": true,
+        ".vscode/.ropeproject": true,
+    },
+
+    "python.testing.unittestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "python.testing.pytestArgs": [],
+
+    "python.formatting.provider": "yapf",
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
+    },
+    "editor.codeActionsOnSaveTimeout": 10000,
+    "editor.formatOnSaveTimeout": 10000,
+
+    "python.jediEnabled": false,
+    "python.linting.pylintEnabled": true,
+    "python.linting.mypyEnabled": true,
+    "python.linting.enabled": true,
+    "python.linting.lintOnSave": true,
+
+    "git.ignoreLimitWarning": true,
+
+    "cSpell.words": [
+    ],
+    "cSpell.diagnosticLevel": "Hint",
+
+    "coverage-gutters.xmlname": "coverage.xml",
+    "coverage-gutters.ignoredPathGlobs": "{output,interactive,.vscode,config,.vscode,.venv}/**",
+    "python.pythonPath": ".venv\\Scripts\\python.exe",
+}
