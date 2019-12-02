@@ -1,9 +1,9 @@
 from configparser import ConfigParser
 from dataclasses import dataclass
 from enum import IntEnum
-from typing import List
+from typing import List, Optional
 
-from mpmath import mpf, mpi
+from lib.intervals import Float, Interval
 
 
 class Status(IntEnum):
@@ -13,13 +13,15 @@ class Status(IntEnum):
 
 
 @dataclass(init=False)
-class Creature:
+class CreatureInput:
     name: str
     species_bp: str
     status: Status
     level: int
-    imprint: mpi
-    stats: List[mpf]
+    imprint: Interval
+    stats: List[Float]
+    wild_levels: Optional[List[int]]
+    dom_levels: Optional[List[int]]
 
 
 def load_export_init(filename: str):
@@ -27,7 +29,7 @@ def load_export_init(filename: str):
     parser.optionxform = lambda v: v  # keep exact case of mod names, please
     parser.read(filename)
 
-    creature = Creature()
+    creature = CreatureInput()
 
     creature.name = parser['Dino Data']['DinoNameTag']
     creature.species_bp = parser['Dino Data']['DinoClass']
@@ -37,10 +39,8 @@ def load_export_init(filename: str):
     if parser['Dino Data']['BabyAge'] != '1.000000':
         raise ValueError("Not fully grown")
     creature.level = int(parser['Dino Data']['CharacterLevel'])
-    creature.imprint = mpi(parser['Dino Data']['DinoImprintingQuality'])
+    creature.imprint = Interval(parser['Dino Data']['DinoImprintingQuality'])
 
-    creature.stats = [
-        mpf(txt) for txt in parser['Max Character Status Values'].values()
-    ]
+    creature.stats = [Float(txt) for txt in parser['Max Character Status Values'].values()]
 
     return creature
