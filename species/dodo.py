@@ -20,6 +20,9 @@ def create_species() -> Species:
     dodo.MaxTamingEffectivenessBaseLevelMultiplier = 0.5
     dodo.TamingIneffectivenessMultiplier = 1
 
+    dodo.DontUseValue = [False, False, False, False, False, True, True, False, False, True, True]
+    dodo.CanLevelUpValue = [True, True, False, True, True, False, False, True, True, False, False]
+
     return dodo
 
 
