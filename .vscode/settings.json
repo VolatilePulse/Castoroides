@@ -24,7 +24,7 @@
 
     "python.jediEnabled": false,
     "python.linting.pylintEnabled": true,
-    "python.linting.mypyEnabled": true,
+    "python.linting.mypyEnabled": false,
     "python.linting.enabled": true,
     "python.linting.lintOnSave": true,
 
