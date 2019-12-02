@@ -1,4 +1,4 @@
-from mpmath import iv, mpf, mpi
+from mpmath import inf, iv, mpf, mpi
 
 mpf.pretty = True
 iv.pretty = True
