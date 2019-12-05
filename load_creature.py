@@ -3,7 +3,7 @@ from dataclasses import dataclass, field
 from enum import IntEnum
 from typing import List, Optional
 
-from lib.intervals import Float, Interval
+from lib.intervals import Float, I
 from utils import possible_inputs_from_rounded
 
 
@@ -19,8 +19,8 @@ class CreatureInput:
     species_bp: str
     status: Status
     level: int
-    imprint: Interval
-    stats: List[Interval]
+    imprint: I
+    stats: List[I]
     wild_levels: Optional[List[int]] = None
     dom_levels: Optional[List[int]] = None
 
@@ -43,7 +43,7 @@ def load_export_init(filename: str):
         raise ValueError("Not fully grown")
 
     creature.level = int(parser['Dino Data']['CharacterLevel'])
-    creature.imprint = Interval(parser['Dino Data']['DinoImprintingQuality'])
+    creature.imprint = I(parser['Dino Data']['DinoImprintingQuality'])
 
     creature.stats = [
         possible_inputs_from_rounded(Float(txt), digits=6) for txt in parser['Max Character Status Values'].values()

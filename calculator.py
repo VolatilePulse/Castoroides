@@ -1,4 +1,4 @@
-from lib.intervals import Float, Interval, inf
+from lib.intervals import Float, I, inf
 from load_creature import CreatureInput
 
 

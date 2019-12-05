@@ -4,4 +4,4 @@ mpf.pretty = True
 iv.pretty = True
 
 Float = mpf
-Interval = mpi
+I = mpi
