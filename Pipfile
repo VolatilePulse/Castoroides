@@ -15,7 +15,7 @@ jupyter = "~=1.0"
 yapf = "~=0.29.0"
 
 [packages]
-pyyaml = "~=5.1.1"
+pyyaml = "~=5.4"
 sympy = "~=1.4"
 mpmath = "~=1.1.0"
 
